@@ -1,15 +1,4 @@
                   Prefix Verb   URI Pattern                    Controller#Action
-             songs_index GET    /songs/index(.:format)         songs#index
-              songs_show GET    /songs/show(.:format)          songs#show
-               songs_new GET    /songs/new(.:format)           songs#new
-            songs_update GET    /songs/update(.:format)        songs#update
-              songs_edit GET    /songs/edit(.:format)          songs#edit
-            songs_create GET    /songs/create(.:format)        songs#create
-            songs_delete GET    /songs/delete(.:format)        songs#delete
-              home_index GET    /home/index(.:format)          home#index
-             users_index GET    /users/index(.:format)         users#index
-              users_show GET    /users/show(.:format)          users#show
-                    root GET    /                              home#index
         new_user_session GET    /users/sign_in(.:format)       users/sessions#new
             user_session POST   /users/sign_in(.:format)       users/sessions#create
     destroy_user_session DELETE /users/sign_out(.:format)      users/sessions#destroy
@@ -18,10 +7,35 @@
            user_password PATCH  /users/password(.:format)      devise/passwords#update
                          PUT    /users/password(.:format)      devise/passwords#update
                          POST   /users/password(.:format)      devise/passwords#create
-cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
-   new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
-  edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
-       user_registration PATCH  /users(.:format)               devise/registrations#update
-                         PUT    /users(.:format)               devise/registrations#update
-                         DELETE /users(.:format)               devise/registrations#destroy
-                         POST   /users(.:format)               devise/registrations#create
+cancel_user_registration GET    /users/cancel(.:format)        users/registrations#cancel
+   new_user_registration GET    /users/sign_up(.:format)       users/registrations#new
+  edit_user_registration GET    /users/edit(.:format)          users/registrations#edit
+       user_registration PATCH  /users(.:format)               users/registrations#update
+                         PUT    /users(.:format)               users/registrations#update
+                         DELETE /users(.:format)               users/registrations#destroy
+                         POST   /users(.:format)               users/registrations#create
+               playlists GET    /playlists(.:format)           playlists#index
+                         POST   /playlists(.:format)           playlists#create
+            new_playlist GET    /playlists/new(.:format)       playlists#new
+           edit_playlist GET    /playlists/:id/edit(.:format)  playlists#edit
+                playlist GET    /playlists/:id(.:format)       playlists#show
+                         PATCH  /playlists/:id(.:format)       playlists#update
+                         PUT    /playlists/:id(.:format)       playlists#update
+                         DELETE /playlists/:id(.:format)       playlists#destroy
+                   songs GET    /songs(.:format)               songs#index
+                         POST   /songs(.:format)               songs#create
+                new_song GET    /songs/new(.:format)           songs#new
+               edit_song GET    /songs/:id/edit(.:format)      songs#edit
+                    song GET    /songs/:id(.:format)           songs#show
+                         PATCH  /songs/:id(.:format)           songs#update
+                         PUT    /songs/:id(.:format)           songs#update
+                         DELETE /songs/:id(.:format)           songs#destroy
+                   users GET    /users(.:format)               users#index
+                         POST   /users(.:format)               users#create
+                new_user GET    /users/new(.:format)           users#new
+               edit_user GET    /users/:id/edit(.:format)      users#edit
+                    user GET    /users/:id(.:format)           users#show
+                         PATCH  /users/:id(.:format)           users#update
+                         PUT    /users/:id(.:format)           users#update
+                         DELETE /users/:id(.:format)           users#destroy
+                    root GET    /                              home#index
