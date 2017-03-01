@@ -6,4 +6,11 @@ module UsersHelper
 			User.new
 		end
 	end
+	def show_playlists
+		if Playlist.all 
+			Playlist.all
+		else
+			Playlist.new
+		end
+	end
 end

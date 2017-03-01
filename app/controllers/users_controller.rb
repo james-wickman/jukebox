@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
+  include UsersHelper
   def index
+    @user = current_user
+    @playlists = show_playlists
   end
 
   def show
